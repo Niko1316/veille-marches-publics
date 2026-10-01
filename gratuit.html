@@ -35,6 +35,21 @@ a.retour { display:inline-block; margin-top:26px; color:var(--accent); text-deco
   font-weight:600; }
 .pied { margin-top:44px; padding-top:18px; border-top:1px solid var(--trait);
   font-size:13px; color:var(--gris); }
+.lead { font-size:14px; color:var(--gris); margin:0 0 18px; }
+.rassure { list-style:none; padding:0; margin:14px 0 0; }
+.rassure li { position:relative; padding:4px 0 4px 24px; font-size:14px; color:var(--gris); }
+.rassure li:before { content:""; position:absolute; left:4px; top:12px; width:7px; height:7px;
+  border-radius:50%; background:var(--accent); }
+.etapes { list-style:none; padding:0; margin:14px 0 0; counter-reset:e; }
+.etapes li { position:relative; padding:0 0 16px 44px; }
+.etapes li:before { counter-increment:e; content:counter(e); position:absolute; left:0; top:0;
+  width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff;
+  font-size:14px; font-weight:700; text-align:center; line-height:28px; }
+.etapes b { display:block; }
+.etapes span { font-size:14px; color:var(--gris); }
+.garantie { background:#f2faf7; border:1px solid #bfe6d8; border-radius:10px; padding:16px 18px;
+  margin:20px 0; font-size:14px; color:var(--encre); }
+.garantie b { display:block; margin-bottom:4px; }
 </style>
 </head>
 <body>
@@ -46,12 +61,24 @@ a.retour { display:inline-block; margin-top:26px; color:var(--accent); text-deco
     <select id="metier" name="metier" required><option value="chauffagiste">Chauffage, ventilation, climatisation</option><option value="electricien">Électricité, éclairage</option><option value="plombier">Plomberie, sanitaire</option><option value="nettoyage">Nettoyage, propreté</option><option value="securite">Gardiennage, sécurité</option><option value="transport">Transport, logistique</option><option value="informatique">Logiciel, informatique</option><option value="espaces-verts">Espaces verts, paysage</option><option value="formation">Formation professionnelle</option><option value="menuiserie">Menuiserie, serrurerie</option></select>
     <label for="email">Votre adresse professionnelle</label>
     <input id="email" name="email" type="email" required placeholder="nom@votre-entreprise.fr">
-    <button type="submit">Recevoir mes appels d'offres</button>
-    <p class="note">Trois appels d'offres par semaine pendant un mois, sans carte bancaire. Ensuite, si cela vous est utile, la veille complète chaque matin : 49 € par mois pour la France, 149 € pour les 27 pays de l'Union européenne, sans engagement.</p>
+    <button type="submit">Recevoir mes trois appels d'offres gratuits</button>
+    <ul class="rassure"><li>Sans carte bancaire, sans engagement.</li><li>Votre adresse sert uniquement à vous envoyer ces appels d'offres. Jamais revendue.</li><li>Désinscription en un clic, à tout moment.</li></ul>
   </form>
+  <p class="note">Trois appels d'offres par semaine pendant un mois. Ensuite, si cela vous est utile, la veille complète chaque matin : 49 € par mois pour un pays, 149 € pour les 27 pays de l'Union européenne, résiliable en un clic. Si vous ne trouvez pas au moins dix marchés de votre métier en 30 jours, nous vous remboursons.</p>
+
+  <h2>Ce qui se passe ensuite</h2>
+  <ol class="etapes">
+    <li><b>Vous recevez trois appels d'offres dans la minute.</b><span>Des marchés réellement publiés, choisis pour le métier que vous avez sélectionné.</span></li>
+    <li><b>Vous en recevez trois par semaine pendant un mois.</b><span>De quoi voir si cela vous fait gagner du temps, sans rien payer.</span></li>
+    <li><b>Vous décidez librement.</b><span>Si c'est utile, vous activez la veille quotidienne. Sinon, vous ne faites rien et tout s'arrête.</span></li>
+  </ol>
+
   <h2>Ce que vous recevez</h2>
-  <p class="m">Exemple réel reçu par un chauffagiste :</p>
+  <p class="exemple m">Exemple réel reçu par un chauffagiste :</p>
   <div class="exemple"><div class="t">Exploitation et maintenance des installations de chauffage, ventilation et climatisation</div><div class="m">Ville de Clamart &middot; 2026-10-09</div></div><div class="exemple"><div class="t">Maintenance thermique et entretien de chauffage, traitement d'air et production d'eau chaude sanitaire</div><div class="m">Communauté de communes du Val de Loire &middot; 2026-11-06</div></div>
+
+  <div class="garantie"><b>Pourquoi c'est gratuit ?</b>Nous savons que vous ne nous croirez pas sur parole. Ces trois appels d'offres sont la preuve : vous voyez le résultat avant de payer quoi que ce soit. Les avis sont publics, notre travail de tri ne l'est pas.</div>
+
   <p class="pied">Appels d'offres issus des données publiques officielles (BOAMP, TED Union européenne). Aucune donnée revendue.</p>
   <a class="retour" href="/">&larr; Digital-V Partners</a>
 </div>
