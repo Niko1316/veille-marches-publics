@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Não receber mais as nossas mensagens - Digital-V Partners</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --encre:#12161c; --gris:#5b6472; --trait:#e3e7ed; --accent:#0b6b52; --fond:#fbfcfd; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--fond); color:var(--encre);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+.page { max-width:600px; margin:0 auto; padding:60px 22px 80px; }
+h1 { font-size:26px; line-height:1.3; margin:0 0 14px; letter-spacing:-.3px; }
+p { color:var(--gris); }
+form { background:#fff; border:1px solid var(--trait); border-radius:12px; padding:22px; margin-top:22px; }
+label { display:block; font-size:13px; font-weight:600; text-transform:uppercase;
+  letter-spacing:.4px; color:var(--gris); margin:0 0 6px; }
+input { width:100%; padding:12px 13px; font-size:16px; border:1px solid var(--trait);
+  border-radius:8px; margin:0 0 16px; background:#fff; color:var(--encre); }
+button { width:100%; padding:14px; font-size:16px; font-weight:600; color:#fff; background:var(--accent);
+  border:0; border-radius:8px; cursor:pointer; }
+button:hover { background:#095a45; }
+.note { font-size:13px; margin-top:14px; }
+a { color:var(--accent); font-weight:600; text-decoration:none; }
+.ex { border-left:3px solid var(--accent); padding:2px 0 2px 16px; margin:14px 0; }
+.ex .t { font-weight:600; font-size:15px; }
+.ex .m { font-size:14px; color:var(--gris); }
+h2 { font-size:17px; margin:34px 0 10px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Não receber mais as nossas mensagens</h1>
+  <p>Indique o endereço no qual você recebe os nossos alertas. Ele será removido
+  imediatamente e em definitivo, sem justificativa a apresentar.</p>
+  <form action="https://digital-agent.duckdns.org/webhook/veille-desabonnement" method="post">
+    <input type="hidden" name="langue" value="pt">
+    <label for="email">O seu endereço</label>
+    <input id="email" name="email" type="email" required placeholder="nome@suaempresa.com.br">
+    <button type="submit">Não receber mais alertas</button>
+    <p class="note">A remoção é efetiva na hora. Você não receberá mais nenhuma mensagem
+    da nossa parte, inclusive as licitações já programadas.</p>
+  </form>
+
+  <h2>Antes de sair, veja o que você deixa de receber</h2>
+  <div class="ex"><div class="t">Registro de Preços para serviços de manutenção preventiva e corretiva de geladeiras e câmaras de conservação de imunobiológicos</div><div class="m">MUNICIPIO DE LINDOESTE (PR) &middot; Data limite 09/10/2026 &middot; R$ 108.748,54</div></div>
+  <div class="ex"><div class="t">REGISTRO DE PREÇO PARA AQUISIÇÃO DE DESKTOP E IMPRESSORA MULTIFUNCIONAL</div><div class="m">MUNICIPIO DE SANTANA DO LIVRAMENTO (RS) &middot; Data limite 08/10/2026 &middot; R$ 5.135.191,34</div></div>
+  <div class="ex"><div class="t">Contratação de serviços de transporte rodoviário de passageiros, com ônibus e motorista, para atendimento de demandas da UNIRIO</div><div class="m">UNIVERSIDADE FEDERAL DO ESTADO DO RIO DE JANEIRO (RJ) &middot; Data limite 08/10/2026 &middot; R$ 8.003.769,60</div></div>
+
+  <p class="note">Você recebeu uma mensagem nossa sem tê-la pedido, ou simplesmente quer nos
+  escrever: <a href="mailto:contact@digital-vpartners.com">contact@digital-vpartners.com</a></p>
+  <p class="note"><a href="https://marches.digital-vpartners.com/br.html">&larr; Digital-V Partners</a></p>
+</div>
+<script>
+// Preenchimento a partir do link recebido no e-mail: menos atrito, portanto menos
+// pessoas que desistem e continuam a receber mensagens que não querem mais.
+try {
+  var e = new URLSearchParams(window.location.search).get('e');
+  if (e) document.getElementById('email').value = e;
+} catch (err) {}
+</script>
+</body>
+</html>
